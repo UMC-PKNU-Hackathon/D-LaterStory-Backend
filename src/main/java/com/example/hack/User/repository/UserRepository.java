@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CommentRepository extends JpaRepository<Comment, Integer> {
+public interface UserRepository extends JpaRepository<Comment, Integer> {
 
     @Query("select c from Comment c where c.purchaseMember.purchaseMemberId=:PurchaseMemberId")
     List<Comment> findCommentByPurchaseMember(int PurchaseMemberId);

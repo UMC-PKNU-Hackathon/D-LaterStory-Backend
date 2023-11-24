@@ -2,12 +2,12 @@ package com.example.hack.Comment.entity;
 
 import com.example.hack.Auditable;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +27,16 @@ public class Comment extends Auditable {
     @Column
     @ElementCollection
     private List<String> photos = new ArrayList<>();
+
+    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private String createdDate;
+
+    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private String modifiedDate;
+
+
+
+
 
 
 

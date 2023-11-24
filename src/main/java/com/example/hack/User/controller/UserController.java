@@ -1,4 +1,4 @@
 package com.example.hack.User.controller;
 
-public class PostController {
+public class UserController {
 }
