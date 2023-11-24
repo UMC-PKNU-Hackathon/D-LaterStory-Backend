@@ -30,6 +30,5 @@ public class Comment extends Auditable {
 
 
 
-
 }
 

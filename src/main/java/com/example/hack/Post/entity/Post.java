@@ -2,10 +2,12 @@ package com.example.hack.Post.entity;
 
 
 import com.example.hack.Auditable;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -20,8 +22,16 @@ public class Post extends Auditable {
     @Column
     private String title;
 
+    @Column
+    private String content;
 
+    @Column
+    private String image;
 
+    @Column
+    private int view;
 
+    @Column
+    private String tag;
 
 }

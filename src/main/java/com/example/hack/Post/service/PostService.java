@@ -29,7 +29,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Log4j2
-public class CommentService {
+public class PostService {
     
     private final CommentRepository commentRepository;
     private final TokenService tokenService;
