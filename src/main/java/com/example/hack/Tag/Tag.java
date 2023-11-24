@@ -1,4 +1,4 @@
-package com.example.hack.Tag.entity;
+package com.example.hack.Tag;
 
 
 import com.example.hack.Auditable;

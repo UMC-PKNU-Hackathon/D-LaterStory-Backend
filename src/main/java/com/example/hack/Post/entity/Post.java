@@ -1,4 +1,4 @@
-package com.example.hack.Likes.entity;
+package com.example.hack.Post.entity;
 
 
 import com.example.hack.Auditable;
@@ -8,23 +8,36 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-public class Likes extends Auditable {
+public class Post extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private Member member;
+    @Column
+    private String title;
+
+    @Column
+    private String content;
+
+    @Column
+    private String image;
+
+    @Column
+    private int view;
+
+    @Column
+    private String tag;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "postId")
-    private Member post;
+    @JoinColumn(name = "id")
+    private Member member;
+
 
 }

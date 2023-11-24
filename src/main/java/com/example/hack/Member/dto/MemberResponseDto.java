@@ -1,14 +1,15 @@
-package com.example.hack.Likes.dto;
+package com.example.hack.Member.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class LikesResponseDto {
+public class MemberResponseDto {
+
 
     @Getter
     @AllArgsConstructor
     public static class Response {
-        private int id;
+        private String username;
+        private String image;
     }
-
 }

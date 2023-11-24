@@ -27,7 +27,7 @@ public class Securityconfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/members/login").permitAll()
-                .antMatchers("/members/sign-up").permitAll()
+                .antMatchers("/members/signup").permitAll()
                 //.antMatchers("/members/test").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()

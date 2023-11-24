@@ -1,7 +1,6 @@
-package com.example.hack.Tag.mapping;
+package com.example.hack.Tag;
 
 import com.example.hack.Post.entity.Post;
-import com.example.hack.Tag.entity.Tag;
 
 import javax.persistence.*;
 

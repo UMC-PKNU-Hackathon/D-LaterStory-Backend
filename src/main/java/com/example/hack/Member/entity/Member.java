@@ -23,10 +23,19 @@ public class Member implements UserDetails {
  
     @Id
     @Column(updatable = false, unique = true, nullable = false)
+    private long Id;
+
+    @Column
     private String memberId;
  
     @Column(nullable = false)
     private String password;
+
+    @Column
+    private String memberName;
+
+    @Column
+    private String image;
  
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
