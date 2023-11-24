@@ -1,19 +1,17 @@
-package com.example.hack.Comment.dto;
+package com.example.hack.User.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-
-public class CommentRequestDto {
+public class UserRequestDto {
 
     @Getter
     @AllArgsConstructor
-    public static class Comment {
+    public static class User {
         private int id;
-        private String content;
+        private String userId;
+
     }
 
     @Getter
@@ -21,8 +19,9 @@ public class CommentRequestDto {
     @AllArgsConstructor
     public static class Patch {
         private int id;
-        private String content;
+        private String userId;
+        private String userPw;
+        private String name;
     }
-
 
 }

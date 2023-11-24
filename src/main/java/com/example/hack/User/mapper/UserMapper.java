@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface CommentMapper {
+public interface UserMapper {
     CommentResponseDto.Response CommentToCommentResponseDto(Comment comment);
 
     default List<CommentResponseDto.ListResponse> commentToCommentResponseDtoList(List<Comment> commentList,List<String> HotelName,List<String> roomName,List<String> PackageName,List<Double> hotelStar){

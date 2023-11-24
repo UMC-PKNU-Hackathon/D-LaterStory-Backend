@@ -1,5 +1,7 @@
 package com.example.hack.Comment.controller;
 
+import com.example.hack.Comment.mapper.CommentMapper;
+import com.example.hack.Comment.service.CommentService;
 import com.umc.mot.comment.dto.CommentRequestDto;
 import com.umc.mot.comment.dto.CommentResponseDto;
 import com.umc.mot.comment.entity.Comment;
@@ -31,7 +33,7 @@ public class CommentController {
     
     private final CommentService commentService;
     private final CommentMapper commentMapper;
-    private final PackageService packageService;
+//    private final PackageService packageService;
 
     // Create
     @PostMapping
@@ -49,6 +51,7 @@ public class CommentController {
     // Read
     @GetMapping("/PurchaseMember")
     public ResponseEntity getComment(){
+        commentService
     }
 
 

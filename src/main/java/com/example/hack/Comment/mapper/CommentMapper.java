@@ -1,6 +1,8 @@
 package com.example.hack.Comment.mapper;
 
 
+import com.example.hack.Comment.dto.CommentResponseDto;
+import com.example.hack.Comment.entity.Comment;
 import com.umc.mot.comment.dto.CommentRequestDto;
 import com.umc.mot.comment.dto.CommentResponseDto;
 import com.umc.mot.comment.entity.Comment;
