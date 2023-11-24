@@ -1,21 +1,6 @@
 package com.example.hack.Likes.service;
 
-import com.umc.mot.comment.entity.Comment;
-import com.umc.mot.comment.repository.CommentRepository;
-import com.umc.mot.exception.BusinessLogicException;
-import com.umc.mot.exception.ExceptionCode;
-import com.umc.mot.hotel.entity.Hotel;
-import com.umc.mot.hotel.repository.HotelRepository;
-import com.umc.mot.hotel.service.HotelService;
-import com.umc.mot.packagee.service.PackageService;
-import com.umc.mot.purchaseMember.entity.PurchaseMember;
-import com.umc.mot.reserve.entity.Reserve;
-import com.umc.mot.reserve.service.ReserveService;
-import com.umc.mot.room.entity.Room;
-import com.umc.mot.room.service.RoomService;
-import com.umc.mot.roomPackage.service.RoomPackageService;
-import com.umc.mot.token.service.TokenService;
-import com.umc.mot.utils.S3Uploader;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -25,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+/*
 @Service
 @AllArgsConstructor
 @Log4j2
@@ -166,3 +151,6 @@ public class LikesService {
         return commentRepository.save(comment);
     }
 }
+
+
+ */

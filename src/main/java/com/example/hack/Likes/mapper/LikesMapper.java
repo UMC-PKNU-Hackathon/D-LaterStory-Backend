@@ -14,7 +14,7 @@ public interface LikesMapper {
     LikesResponseDto.Response LikesToLikesResponseDto(Likes likes);
 
     Likes LikesRequestDtoPostToLikes(LikesRequestDto.Likes likes);
-    Likes LikesRequestDtoPatchToLikes(LikesRequestDto.Patch patch);
+    //Likes LikesRequestDtoPatchToLikes(LikesRequestDto.Patch patch);
 
 
 

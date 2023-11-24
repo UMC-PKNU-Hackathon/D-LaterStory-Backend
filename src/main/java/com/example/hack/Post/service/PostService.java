@@ -1,14 +1,17 @@
 package com.example.hack.Post.service;
 
-import com.example.hack.Comment.entity.Comment;
+
+import com.example.hack.Post.dto.PostRequestDto;
+import com.example.hack.Post.dto.PostResponseDto;
 import com.example.hack.Post.entity.Post;
-import com.example.hack.Post.repository.CommentRepository;
+import com.example.hack.Post.mapper.PostMapper;
 import com.example.hack.Post.repository.PostRepository;
 import com.example.hack.User.entity.User;
 import com.example.hack.User.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
@@ -22,23 +25,45 @@ import java.util.Optional;
 @AllArgsConstructor
 @Log4j2
 public class PostService {
-    
+
     private PostRepository postRepository;
-    private CommentRepository commentRepository;
     private UserRepository userRepository;
+    private PostMapper postMapper;
 
-    // 게시글 저장
-    @Transactional
-    public Integer save(String tag, String memberId, String title, String content) {
-        User user = userRepository.findById(memberId).get();
-        Post post = new Post();
+    public PostResponseDto.Response postSave(String userId, PostRequestDto.Post post) {
 
-        post.setContent(content);
-        post.setTag(tag);
-        post.setTitle(title);
-        post.set
+        Optional<User> user = userRepository.findByUserid(userId);
+        User user1 = user.get();
+        Post post1 = postMapper.PostRequestDtoPostToPost(post);
+        post1.setUser(user1);
+
+        postRepository.save(post1);
+
+        PostResponseDto.Response response = postMapper.PostToCommentResponseDto(post1);
+
+        return response;
     }
 
+    public void deletePost(int postid) {
+
+        Optional<Post> post1 = postRepository.findById(postid);
+        Post post2 = post1.get();
+        postRepository.delete(post2);
+
+    }
+
+    public PostResponseDto.ListPost getAllPost() {
+
+        List<Post> a = postRepository.findAll();
+
+        PostResponseDto.ListPost response = postMapper.postToList(a);
+
+
+        return response;
+    }
+
+
+/*
     // 게시글 수정
     @Transactional
     public Integer update(String tag, Integer postId, String title, String content) {
@@ -77,6 +102,9 @@ public class PostService {
 
         commentRepository.delete(comment);
     }
+
+     */
+
 
 
 

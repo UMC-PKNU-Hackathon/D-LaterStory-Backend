@@ -2,8 +2,8 @@ package com.example.hack.User.entity;
 
 
 import com.example.hack.Auditable;
-import com.example.hack.Comment.entity.Comment;
 
+import com.example.hack.Post.entity.Post;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,14 +23,21 @@ public class User extends Auditable {
     private int id;
 
     // 로그인 시 입력아이디
-    @Column(nullable = false, length = 40)
-    private String userId;
+    @Column
+    private String userid;
 
-    @Column(nullable = false, length = 40)
-    private String userPW;
+    @Column
+    private String username;
 
-    @Column(nullable = false, length = 40)
-    private String name;
+    @Column
+    private String image;
+
+    @Column
+    private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Post> post = new ArrayList<>();
+
 
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    private List<Comment> commentList = new ArrayList<>();

@@ -1,13 +1,13 @@
 package com.example.hack.Tag.repository;
 
-import com.umc.mot.comment.entity.Comment;
+import com.example.hack.Tag.entity.Tag;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface TagRepository extends JpaRepository<Comment, Integer> {
+public interface TagRepository extends JpaRepository<Tag, Integer> {
 
-    @Query("select c from Comment c where c.purchaseMember.purchaseMemberId=:PurchaseMemberId")
-    List<Comment> findCommentByPurchaseMember(int PurchaseMemberId);
+ ;
 }

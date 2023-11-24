@@ -1,12 +1,13 @@
 package com.example.hack.Likes.repository;
 
-import com.umc.mot.comment.entity.Comment;
+import com.example.hack.Likes.entity.Likes;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface LikesRepository extends JpaRepository<Comment, Integer> {
+public interface LikesRepository extends JpaRepository<Likes, Integer> {
 
 
 }

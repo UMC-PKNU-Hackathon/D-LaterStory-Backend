@@ -1,10 +1,11 @@
-package com.example.hack.Post.dto;
+package com.example.hack.User.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class PostResponseDto {
@@ -12,7 +13,8 @@ public class PostResponseDto {
     @Getter
     @Setter
     @AllArgsConstructor
-    public static class Response {
+    @NoArgsConstructor
+    public static class Post {
         private int id;
         private String content;
         private String title;
@@ -20,13 +22,7 @@ public class PostResponseDto {
         private int view;
         private String username;
         private List<String> tag;
-    }
-
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class ListPost {
-        private List<com.example.hack.User.dto.PostResponseDto.Post> postList;
+        private LocalDateTime createdAt;
+        private LocalDateTime modifiedAt;
     }
 }

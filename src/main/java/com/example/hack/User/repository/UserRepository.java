@@ -1,13 +1,17 @@
 package com.example.hack.User.repository;
 
-import com.umc.mot.comment.entity.Comment;
+import com.example.hack.Post.entity.Post;
+import com.example.hack.User.entity.User;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<Comment, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-    @Query("select c from Comment c where c.purchaseMember.purchaseMemberId=:PurchaseMemberId")
-    List<Comment> findCommentByPurchaseMember(int PurchaseMemberId);
+    Optional<User> findByUserid(String userId);
+
+
 }

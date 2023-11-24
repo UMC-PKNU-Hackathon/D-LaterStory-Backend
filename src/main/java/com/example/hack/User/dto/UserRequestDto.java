@@ -8,19 +8,25 @@ public class UserRequestDto {
 
     @Getter
     @AllArgsConstructor
-    public static class User {
-        private int id;
-        private String userId;
+    public static class Post {
+        private String userid;
+        private String username;
+        private String password;
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public static class login {
+        private String userid;
+        private String password;
     }
 
     @Getter
     @Setter
     @AllArgsConstructor
     public static class Patch {
-        private int id;
-        private String userId;
-        private String userPw;
-        private String name;
+        private String username;
+        private String password;
     }
 
 }
