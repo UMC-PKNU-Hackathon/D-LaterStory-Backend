@@ -2,6 +2,7 @@ package com.example.hack.Comment.entity;
 
 import com.example.hack.Auditable;
 
+import com.example.hack.Post.entity.Post;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,8 +35,9 @@ public class Comment extends Auditable {
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private String modifiedDate;
 
-
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Post post;
 
 
 
