@@ -9,8 +9,6 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -25,22 +23,12 @@ public class Comment extends Auditable {
     @Column
     private String content;
 
-    @Column
-    @ElementCollection
-    private List<String> photos = new ArrayList<>();
-
-    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private String createdDate;
-
-    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private String modifiedDate;
+//    @Column
+//    @ElementCollection
+//    private List<String> photos = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id")
     private Post post;
-
-
-
-
 }
 

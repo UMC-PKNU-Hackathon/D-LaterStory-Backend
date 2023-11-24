@@ -11,7 +11,6 @@ public class UserRequestDto {
     public static class User {
         private int id;
         private String userId;
-
     }
 
     @Getter
