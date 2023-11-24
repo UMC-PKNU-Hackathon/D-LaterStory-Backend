@@ -45,31 +45,8 @@ public class CommentService {
     //후기작성
     public Comment createComment(Comment comment,int reserveId){
         PurchaseMember purchaseMember = tokenService.getLoginPurchaseMember();
-        Reserve reserve = reserveService.findReserve(reserveId);
-        if(LocalDate.now().isAfter(reserve.getCheckOut())){
-            comment.setHotel(reserve.getHotel());
-            comment.setPurchaseMember(purchaseMember);
-            comment.setVisible(true);
-            comment.setReserve(reserve);
-            Hotel hotel  = hotelService.findHotel(comment.getHotel().getId());
-            //호텔 comment 개수
-            int comm = hotel.getCommentCount();
-            comm = comm + 1 ;
-            hotel.setCommentCount(comm);
-            //호텔 별점
-            double star = hotel.getStar();
-            double commentStar = comment.getStar();
-            int commentCount = hotel.getCommentCount();
 
-            //호텔 별점 가져와서 계산한 후 저장
-            double account;
-            if (commentCount > 0) {
-                account = ((star * (commentCount - 1)) + commentStar) / commentCount;
-            } else {
-                account = commentStar; // 호텔에 아직 댓글이 없는 경우
-            }
-            hotel.setStar(account);
-            hotelRepository.save(hotel);
+            hotelRepy.savositore(hotel);
             return commentRepository.save(comment);
         }
         else{

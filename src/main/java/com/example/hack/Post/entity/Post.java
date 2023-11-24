@@ -2,6 +2,7 @@ package com.example.hack.Post.entity;
 
 
 import com.example.hack.Auditable;
+import com.example.hack.User.entity.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,5 +34,10 @@ public class Post extends Auditable {
 
     @Column
     private String tag;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private User user;
+
 
 }

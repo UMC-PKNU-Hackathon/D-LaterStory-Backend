@@ -11,9 +11,12 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface PostMapper {
-    PostResponseDto.Response PostToCommentResponseDto(Post post);
 
-    Post PostRequestDtoPostToPost(PostRequestDto.Post post);
+    Post PostRequestDtoToPost(PostRequestDto.Post post);
+    PostResponseDto PostToPostResponseDto(Post post);
+
+
+
     Post PostRequestDtoPatchToPost(PostRequestDto.Patch patch);
 
 
