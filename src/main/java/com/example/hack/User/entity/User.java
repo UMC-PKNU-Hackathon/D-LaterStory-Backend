@@ -32,8 +32,8 @@ public class User extends Auditable {
     @Column(nullable = false, length = 40)
     private String name;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Comment> commentList = new ArrayList<>();
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<Comment> commentList = new ArrayList<>();
 
 
 
