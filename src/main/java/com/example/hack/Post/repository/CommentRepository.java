@@ -1,4 +1,4 @@
-package com.example.hack.comment.repository;
+package com.example.hack.Post.repository;
 
 import com.umc.mot.comment.entity.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;

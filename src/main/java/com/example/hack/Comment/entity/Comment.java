@@ -1,4 +1,4 @@
-package com.example.hack.comment.entity;
+package com.example.hack.Comment.entity;
 
 import com.umc.mot.auditable.Auditable;
 import com.umc.mot.hotel.entity.Hotel;

@@ -1,4 +1,4 @@
-package com.example.hack.comment.service;
+package com.example.hack.Post.service;
 
 import com.umc.mot.comment.entity.Comment;
 import com.umc.mot.comment.repository.CommentRepository;

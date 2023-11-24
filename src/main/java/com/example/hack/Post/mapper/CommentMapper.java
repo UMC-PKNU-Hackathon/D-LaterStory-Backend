@@ -1,4 +1,4 @@
-package com.example.hack.comment.mapper;
+package com.example.hack.Post.mapper;
 
 
 import com.umc.mot.comment.dto.CommentRequestDto;

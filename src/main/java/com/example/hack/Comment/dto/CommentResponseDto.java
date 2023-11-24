@@ -1,4 +1,4 @@
-package com.example.hack.comment.dto;
+package com.example.hack.Comment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
